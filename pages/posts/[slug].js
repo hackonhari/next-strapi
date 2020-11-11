@@ -63,7 +63,7 @@ export async function getStaticProps({ params, preview = null }) {
       },
       morePosts: data?.morePosts,
     },
-    unstable_revalidate: 1,
+    revalidate: 5
   };
 }
 
