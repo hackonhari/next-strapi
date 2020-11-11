@@ -14,7 +14,7 @@ export default function Avatar({ name, picture }) {
   return (
     <div className="flex items-center">
       <picture className="object-cover rounded-full w-12 mr-4 h-12 grayscale">
-        <source media="(min-width:280px)" srcSet={thumbnailUrl} />
+        <source media="(max-width:1400px)" srcSet={thumbnailUrl} />
         <img
           className="rounded-full w-12 mr-4 h-12 grayscale"
           src={imageUrl}

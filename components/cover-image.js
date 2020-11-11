@@ -27,16 +27,16 @@ export default function CoverImage({ title, url, slug, formats }) {
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
           <a aria-label={title}>
             <picture>
-              <source media="(max-width:650px)" scrset={smallUrl} />
-              <source media="(min-width:768px)" scrset={mediumUrl} />
+              <source media="(max-width:1400px)" scrset={smallUrl} />
+              <source media="(min-width:1400px)" scrset={mediumUrl} />
               <img src={imageUrl} alt={title} />
             </picture>
           </a>
         </Link>
       ) : (
         <picture>
-          <source media="(max-width:650px)" scrset={smallUrl} />
-          <source media="(max-width:768px)" scrset={mediumUrl} />
+          <source media="(max-width:1400px)" scrset={smallUrl} />
+          <source media="(min-width:1400px)" scrset={mediumUrl} />
           <img src={imageUrl} alt={title} />
         </picture>
       )}
