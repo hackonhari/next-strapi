@@ -29,7 +29,6 @@ export default function CoverImage({ title, url, slug, formats }) {
             <picture>
               <source media="(max-width:1400px)" scrset={smallUrl} />
               <source media="(min-width:1400px)" scrset={mediumUrl} />
-              <img src={imageUrl} alt={title} />
             </picture>
           </a>
         </Link>
@@ -37,7 +36,6 @@ export default function CoverImage({ title, url, slug, formats }) {
         <picture>
           <source media="(max-width:1400px)" scrset={smallUrl} />
           <source media="(min-width:1400px)" scrset={mediumUrl} />
-          <img src={imageUrl} alt={title} />
         </picture>
       )}
     </div>
