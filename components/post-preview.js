@@ -18,6 +18,8 @@ export default function PostPreview({
           slug={slug}
           title={title}
           url={coverImage.url}
+          width={coverImage.width}
+          height={coverImage.height}
           formats={coverImage.formats}
         />
       </div>

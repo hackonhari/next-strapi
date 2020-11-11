@@ -20,6 +20,8 @@ export default function PostHeader({ title, coverImage, date, author }) {
           title={title}
           url={coverImage.url}
           formats={coverImage.formats}
+          width={coverImage.width}
+          height={coverImage.height}
         />
       </div>
       <div className="max-w-2xl mx-auto">
