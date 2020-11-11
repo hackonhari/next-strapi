@@ -1,20 +1,44 @@
-import Link from 'next/link'
-import Image from 'next/image';
+import Link from "next/link";
+export default function CoverImage({ title, url, slug, formats }) {
+  const { small, large, medium } = formats;
+  const smallUrlLink = small.url;
+  const mediumUrlLink = medium.url;
+  // const largeUrlLink = large.url;
+  console.log(smallUrlLink, mediumUrlLink);
+  const smallUrl = `${
+    smallUrlLink.startsWith("/") ? process.env.NEXT_PUBLIC_STRAPI_API_URL : ""
+  }${smallUrlLink}`;
 
-export default function CoverImage({ title, url, slug, width, height }) {
+  const mediumUrl = `${
+    mediumUrlLink.startsWith("/") ? process.env.NEXT_PUBLIC_STRAPI_API_URL : ""
+  }${mediumUrlLink}`;
+
+  // const largeUrl = `${
+  //   largeUrlLink.startsWith("/") ? process.env.NEXT_PUBLIC_STRAPI_API_URL : ""
+  // }${largeUrlLink}`;
+
   const imageUrl = `${
-    url.startsWith('/') ? process.env.NEXT_PUBLIC_STRAPI_API_URL : ''
-  }${url}`
+    url.startsWith("/") ? process.env.NEXT_PUBLIC_STRAPI_API_URL : ""
+  }${url}`;
+
   return (
     <div className="sm:mx-0">
       {slug ? (
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
           <a aria-label={title}>
-            <Image src={imageUrl} alt={title} width={width} height={height} />
+            <picture>
+              <source media="(max-width:650px)" scrset={smallUrl} />
+              <source media="(min-width:768px)" scrset={mediumUrl} />
+              <img src={imageUrl} alt={title} />
+            </picture>
           </a>
         </Link>
       ) : (
-        <Image src={imageUrl} alt={title} width={width} height={height} />
+        <picture>
+          <source media="(max-width:650px)" scrset={smallUrl} />
+          <source media="(max-width:768px)" scrset={mediumUrl} />
+          <img src={imageUrl} alt={title} />
+        </picture>
       )}
     </div>
   );
