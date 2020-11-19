@@ -32,12 +32,14 @@ export default function PostPreview({
         <Date dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar
-        name={author.name}
-        picture={author.picture}
-        width={author.picture.width}
-        height={author.picture.height}
-      />
+      {author && (
+        <Avatar
+          name={author.name}
+          picture={author.picture}
+          width={author.picture.width}
+          height={author.picture.height}
+        />
+      )}
     </div>
   );
 }
