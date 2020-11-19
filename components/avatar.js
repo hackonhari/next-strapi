@@ -1,6 +1,5 @@
 import Image from "next/image";
 export default function Avatar({ name, picture }) {
-  console.log(picture[0]);
   const url = picture.url ?? picture[0].url;
   const width = picture.width ?? picture[0].width;
   const height = picture.height ?? picture[0].height;
