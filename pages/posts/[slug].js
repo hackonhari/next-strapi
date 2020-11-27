@@ -14,6 +14,7 @@ import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
 
 export default function Post({ post, morePosts, preview }) {
+  console.log(post, morePosts, preview);
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
